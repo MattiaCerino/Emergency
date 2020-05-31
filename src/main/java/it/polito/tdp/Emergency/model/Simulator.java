@@ -13,9 +13,9 @@ public class Simulator {
 
 	// PARAMETRI DI SIMULAZIONE
 	private int NS = 5; // numero studi medici
-
 	private int NP = 150; // numero di pazienti
-	private Duration T_ARRIVAL = Duration.ofMinutes(5); // intervallo tra i pazienti
+	
+	private Duration T_ARRIVAL = Duration.ofMinutes(5); // Intervallo di interarrivo tra due pazienti
 
 	private final Duration DURATION_TRIAGE = Duration.ofMinutes(5);
 	
@@ -33,7 +33,7 @@ public class Simulator {
 	private final Duration TICK_TIME = Duration.ofMinutes(5);
 
 	// OUTPUT DA CALCOLARE
-	private int pazientiTot;
+	private int pazientiTot;	// Anche se non richiesto
 	private int pazientiDimessi;
 	private int pazientiAbbandonano;
 	private int pazientiMorti;
@@ -42,7 +42,6 @@ public class Simulator {
 	private List<Paziente> pazienti;
 	private PriorityQueue<Paziente> attesa ; // post-triage prima di essere chiamati
 	private int studiLiberi ;
-
 	private CodiceColore coloreAssegnato;
 
 	// CODA DEGLI EVENTI
@@ -50,8 +49,8 @@ public class Simulator {
 
 	// INIZIALIZZAZIONE
 	public void init() {
+		// Svuoto le liste per evitare problemi
 		this.queue = new PriorityQueue<>();
-		
 		this.pazienti = new ArrayList<>();
 		this.attesa = new PriorityQueue<>();
 

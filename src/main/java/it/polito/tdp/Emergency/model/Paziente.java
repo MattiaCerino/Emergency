@@ -20,6 +20,7 @@ public class Paziente implements Comparable<Paziente>{
 	
 	private LocalTime oraArrivo ;
 	private CodiceColore colore ;
+	
 	/**
 	 * @param oraArrivo
 	 * @param colore

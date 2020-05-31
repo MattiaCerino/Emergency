@@ -5,12 +5,12 @@ import java.time.LocalTime;
 public class Event implements Comparable<Event>{
 	
 	public enum EventType {
-		ARRIVAL,  // arriva un nuovo paziente
-		TRIAGE,  // è stato assegnato codice colore e vado in sala d'attesa
-		FREE_STUDIO, // si libera uno studio e chiamo un paziente
-		TREATED, // paziente trattato e dimesso
-		TIMEOUT, // attesa eccessiva in sala d'aspetto
-		TICK, // evento periodico per verificare se ci sono studi vuoti
+		ARRIVAL,		// Arriva un nuovo paziente
+		TRIAGE,			// E' stato assegnato codice colore e vado in sala d'attesa
+		FREE_STUDIO,	// Si libera uno studio e chiamo un paziente
+		TREATED,		// Paziente trattato e dimesso
+		TIMEOUT,		// Attesa eccessiva in sala d'aspetto
+		TICK,			// Evento periodico per verificare se ci sono studi vuoti
 	}
 	
 	private LocalTime time ;
@@ -28,7 +28,8 @@ public class Event implements Comparable<Event>{
 		this.type = type;
 		this.paziente = paziente;
 	}
-	
+
+	// Non metto i setTime() e setType() perché sono valori preassegnati e fondamentali per la loro posizione nella coda prioritaria
 	public LocalTime getTime() {
 		return time;
 	}
@@ -45,7 +46,6 @@ public class Event implements Comparable<Event>{
 	public Paziente getPaziente() {
 		return paziente;
 	}
-
 	
 	@Override
 	public String toString() {
